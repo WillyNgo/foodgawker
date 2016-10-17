@@ -1,5 +1,5 @@
 <?php
-for ($pageNum = 1; $pageNum <= 10; $pageNum++) {
+for ($pageNum = 1; $pageNum <= 100; $pageNum++) {
     scrape($pageNum);
 }
 

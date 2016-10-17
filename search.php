@@ -9,8 +9,8 @@ function searchKeyword($keyword) {
         
         $stmt = $pdo->prepare($tableQuery);
         $stmt->bindValue(1, '%'.$keyword.'%');
-        
-        echo "<table id=results>";
+        echo "<div class='tableResult'>";
+        echo "<table class='results'>";
         echo "<tr><th>Results</th><th>gawks</th></tr>";
         if($stmt->execute()){
             while($row = $stmt->fetch()){
@@ -24,6 +24,7 @@ function searchKeyword($keyword) {
             echo "No results found";
         }
         echo "</table>";
+        echo "</div>";
     } catch (PDOException $pdoe) {
         echo $pdoe->getMessage();
     } finally {
@@ -40,8 +41,8 @@ function getMostGawked() {
                 . "LIMIT 25;";
         
         $stmt = $pdo->prepare($tableQuery);
-        
-        echo "<table id=results>";
+        echo "<div class='tableResult'>";
+        echo "<table class=results>";
         echo "<tr><th>Submitters</th><th>Recipe</th><th>gawks</th></tr>";
         if($stmt->execute()){
             while($row = $stmt->fetch()){
@@ -56,6 +57,7 @@ function getMostGawked() {
             echo "No results found";
         }
         echo "</table>";
+        echo "</div>";
     } catch (PDOException $pdoe) {
         echo $pdoe->getMessage();
     } finally {

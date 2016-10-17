@@ -1,0 +1,51 @@
+
+/* 
+    Created on : Oct 17, 2016, 7:01:59 PM
+    Author     : Willy, Shif
+*/
+body {
+    margin:0;
+    padding:0;
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-color: #cccccc;
+}
+
+#title{
+    text-align: center;
+    font-family: "Lucida Console";
+}
+
+#formWrapper{
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+#searchForm{
+    border: 3px solid black;
+    text-align: center;
+}
+
+.tableResult{
+    margin: 50px auto;
+    width: 70%;
+    align: center;
+}
+
+.results{
+    margin: auto;
+    border-collapse: collapse;
+    border: 2px solid #696969;
+    text-align: center;
+    background-color: #FAF6F5;
+}
+
+td, th{
+    padding: 3px;
+    border: 1px solid #696969;
+}
+
+footer{
+    text-align: center;
+}
