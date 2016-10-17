@@ -6,13 +6,7 @@
     </head>
     <body>
         <?php
-        //include_once("createRecipeTable.php");    
-        include("setup.php");
-        
-        for($pageNum = 1; $pageNum < 2; $pageNum++)
-        {
-            scrape($pageNum);
-        }
+            
         ?>
     </body>
 </html>

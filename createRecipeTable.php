@@ -13,7 +13,7 @@ try{
     $pdo->exec($tableQuery);
     
     //Check if table has been created
-    checkTables($pdo, "recipes");
+    checkTables($pdo, 'recipes');
 }
 catch(PDOException $pdoe)
 {
@@ -28,11 +28,11 @@ function checkTables($pdo, $tablename)
     $tableCheck = $pdo->query("SELECT * FROM $tablename");
     if(!empty($tableCheck))
     {
-        echo "Table exists";
+        echo 'Table exists\n';
     }
     else
     {
-        echo "Table not created";
+        echo 'Table not created\n';
     }
 }
 
