@@ -1,10 +1,10 @@
 <?php
-for ($pageNum = 1; $pageNum < 101; $pageNum++) {
+for ($pageNum = 1; $pageNum <= 10; $pageNum++) {
     scrape($pageNum);
 }
 
 function scrape($pageNum) {
-    $url = "https://foodgawker.com/page$pageNum";
+    $url = "https://foodgawker.com/page/$pageNum";
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $page = curl_exec($ch);
@@ -40,9 +40,9 @@ function addToDatabase($recipename, $link, $description, $username, $gawked) {
         $stmt = $pdo->prepare($query);
 
         $stmt->bindParam(1, $recipename);
-        $stmt->bindParam(2, $link);
+        $stmt->bindParam(2, $username);
         $stmt->bindParam(3, $description);
-        $stmt->bindParam(4, $username);
+        $stmt->bindParam(4, $link);
         $stmt->bindParam(5, $gawked);
 
         $stmt->execute();

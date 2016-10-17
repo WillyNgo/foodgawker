@@ -28,11 +28,11 @@ function checkTables($pdo, $tablename)
     $tableCheck = $pdo->query("SELECT * FROM $tablename");
     if(!empty($tableCheck))
     {
-        echo 'Table exists\n';
+        echo "Table created\n";
     }
     else
     {
-        echo 'Table not created\n';
+        echo "ERROR: Table not created\n";
     }
 }
 
