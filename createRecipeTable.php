@@ -25,6 +25,7 @@ catch(PDOException $pdoe)
 
 function checkTables($pdo, $tablename)
 {
+    // Check if the table was created
     $tableCheck = $pdo->query("SELECT * FROM $tablename");
     if(!empty($tableCheck))
     {

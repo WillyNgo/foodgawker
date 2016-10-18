@@ -19,6 +19,7 @@
 
         $gawkClicked = false;
 
+        //Check if there's something in the field
         if(isset($_GET['search'])){
             if (isset($_GET['keyword']) && $_GET['keyword'] != '') {
                 searchKeyword($_GET['keyword']);
@@ -27,6 +28,7 @@
                 echo "<p class='error'>Enter a keyword</p>";
             }
         }
+        //Check if button was clicked
         if (isset($_GET['gawk'])) {
             getMostGawked();
         }

@@ -35,10 +35,11 @@ function scrape($pageNum) {
 
 function addToDatabase($recipename, $link, $description, $username, $gawked) {
     try {
+        //Add data to database
         $pdo = new PDO('mysql:host=localhost;dbname=homestead', 'homestead', 'secret');
         $query = 'INSERT INTO recipes (recipename, username, description, link, gawked) VALUES (?, ?, ?, ?, ?);';
         $stmt = $pdo->prepare($query);
-
+        
         $stmt->bindParam(1, $recipename);
         $stmt->bindParam(2, $username);
         $stmt->bindParam(3, $description);
